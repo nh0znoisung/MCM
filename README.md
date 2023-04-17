@@ -15,19 +15,41 @@ This is the Assignment of **Parallel Computing** class, so we try to solve the p
 + `Pip` >= 23.0.1
 
 ## Installation
-Clone our source code
+### Clone our source code
 ```sh
-$ git clone https://github.com/nh0znoisung/MCM
-$ cd MCM
+git clone https://github.com/nh0znoisung/MCM
+cd MCM
 ```
 
-Install Dependencies
+### Install Dependencies
 ```sh
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 Run program
 
 ```sh
-$ python main.py
+python main.py < sample.txt
 ```
+
+### Generate testcases
+```sh
+python3 gen_testcase.py --path './' --nt 10 --ne 10 --lb 1 --ub 10
+```
++ `--path`: The target path of testcae folder containing the  testcase
++ `--nt`: The number of testcases we want to generate
++ `--ne`: The max number of elements in a testcase
++ `--lb`: The lowerbound of the dimension values in a testcase. Need to be an integer greater than 0
++ `--ub`: The upperbound of the dimension values in a testcase
+
+**General format of a testcase**
+```txt
+n
+a_1
+a_2
+a_3
+...
+a_n
+```
++ `n`: The number of dimensions in this testcase
++ `a_i`: The values of **i-th** dimensions. Threfore, the matrix `M_i` have the shape (`a_i`, `a_(i+1)`)
