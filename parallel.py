@@ -35,18 +35,17 @@ def run_parallel(_p: list, n: int, nums_thread: int, is_time: bool = False):
     import time
     interval = 0
     for l in range(2,n+1):
-        start1 = time.time()
+        start = time.time()
         list_thread = [Thread(target=task_parallel, args=(idx,l)) for idx in range(nums_thread)]
 
-        interval += time.time() - start1
-        # Too much time: 0.0164
+        # interval += time.time() - start1
         for thread in list_thread:
             thread.start()
         
-        start2 = time.time()
+        # start2 = time.time()
         for thread in list_thread:
             thread.join()
-        interval += time.time() - start2
+        interval += time.time() - start
     
     if is_time:
         return (m[1][n-1], interval/10)
