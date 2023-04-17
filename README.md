@@ -26,7 +26,7 @@ cd MCM
 pip install -r requirements.txt
 ```
 
-Run program
+### Run program
 
 ```sh
 python main.py < sample.txt
@@ -34,11 +34,10 @@ python main.py < sample.txt
 
 ### Generate testcases
 ```sh
-python3 gen_testcase.py --path './' --nt 10 --ne 10 --lb 1 --ub 10
+python3 gen_testcase.py --path './' --nt 10 --lb 1 --ub 10
 ```
 + `--path`: The target path of testcae folder containing the  testcase
 + `--nt`: The number of testcases we want to generate
-+ `--ne`: The max number of elements in a testcase
 + `--lb`: The lowerbound of the dimension values in a testcase. Need to be an integer greater than 0
 + `--ub`: The upperbound of the dimension values in a testcase
 
@@ -53,3 +52,9 @@ a_n
 ```
 + `n`: The number of dimensions in this testcase
 + `a_i`: The values of **i-th** dimensions. Threfore, the matrix `M_i` have the shape (`a_i`, `a_(i+1)`)
+
+### Visualization
+```sh
+python3 visualize_approach.py
+```
+![alt text](visualization/3_compare.png)
